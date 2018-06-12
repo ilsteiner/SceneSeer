@@ -16,7 +16,7 @@ class CreatePlaywrightsTable extends Migration
         Schema::create('playwrights', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('name');
+            $table->string('name')->unique();
             $table->date('born')->nullable();
 
             $table->timestamps();

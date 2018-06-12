@@ -19,8 +19,10 @@ class CreateCharactersTable extends Migration
             $table->string('name');
             $table->string('description')->nullable();
             $table->integer('gender_id')->unsigned();
+            $table->integer('play_id')->unsigned();
 
             $table->foreign('gender_id')->references('id')->on('genders');
+            $table->foreign('play_id')->references('id')->on('plays');
 
             $table->timestamps();
         });

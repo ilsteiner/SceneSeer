@@ -17,7 +17,10 @@ class CreatePlaysTable extends Migration
             $table->increments('id');
 
             $table->string('title');
-            $table->smallInteger('year');
+            $table->smallInteger('year')->nullable();
+            $table->integer('playwright_id')->unsigned();
+
+            $table->foreign('playwright_id')->references('id')->on('playwrights');
 
             $table->timestamps();
         });
