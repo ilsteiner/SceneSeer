@@ -31,6 +31,14 @@ Route::get('play/{play_id}/playwright', function ($play_id) {
     return App\Play::find($play_id)->playwright;
 });
 
+Route::get('play/{play_id}/characters', function ($play_id) {
+    return App\Play::find($play_id)->characters;
+});
+
+Route::get('playwright/{playwright_id}/characters', function ($playwright_id) {
+    return App\Playwright::find($playwright_id)->characters;
+});
+
 Route::get('playwright/{playwright_id}/plays', function ($playwright_id) {
     return App\Playwright::find($playwright_id)->plays;
 });

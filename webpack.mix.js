@@ -11,5 +11,9 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
+
+
+mix.copy('vendor/select2/select2/dist/js/select2.js','resources/assets/js/select2.js')
+   .copyDirectory('vendor/select2/select2/src/scss','resources/assets/sass/select2')
+   .js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');

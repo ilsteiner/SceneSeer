@@ -10,4 +10,9 @@ class Playwright extends Model
     {
         return $this->hasMany('App\Play');
     }
+
+    public function characters()
+    {
+        return $this->hasMany('App\Characters');
+    }
 }
